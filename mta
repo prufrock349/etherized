@@ -7,7 +7,5 @@ response = urllib.request.urlopen('http://datamine.mta.info/mta_esi.php?key=ente
 file = open('mta.txt', 'wb')
 data = response.read()
 print (data)
-decoder = JSONDecoder()
-buffer = ''
 file.write(data)
 file.close()
