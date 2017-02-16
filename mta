@@ -1,11 +1,17 @@
 import urllib.request
 import urllib.parse
-import json
-from json import JSONDecoder
 
-response = urllib.request.urlopen('http://datamine.mta.info/mta_esi.php?key=enterKeyHere&feed_id=1')
-file = open('mta.txt', 'wb')
+#Open web resource
+response = urllib.request.urlopen('http://datamine.mta.info/mta_esi.php?key=yourKeyHere&feed_id=1')
+file = open('mta.dat', 'wb')
 data = response.read()
-print (data)
+print(data)
+
+#write unicode data to file
 file.write(data)
 file.close()
+with open("mta.dat", "rb+") as binary_file:
+    file_data = binary_file.read().strip()
+    print(file_data)
+    data2 = file_data.decode('utf-8', 'ignore')
+    print(data2)
