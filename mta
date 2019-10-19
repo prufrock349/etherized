@@ -15,3 +15,15 @@ with open("mta.dat", "rb+") as binary_file:
     print(file_data)
     data2 = file_data.decode('utf-8', 'ignore')
     print(data2)
+    
+### see: https://github.com/google/gtfs-realtime-bindings/issues/17
+### pip3 install gtfs-realtime-bindings
+#from google.transit import gtfs_realtime_pb2
+#import urllib
+#
+#feed = gtfs_realtime_pb2.FeedMessage()
+#response = urllib.urlopen('URL OF YOUR GTFS-REALTIME SOURCE GOES HERE')
+#feed.ParseFromString(response.read())
+#for entity in feed.entity:
+#  if entity.HasField('trip_update'):
+#    print (entity.trip_update)
